@@ -122,7 +122,7 @@ const Dashboard = () => {
 
   return (
     <div>
-      {new Date("March 23, 2023 15:37:25").getTime() - new Date().getTime() <= 0 ? (
+      {new Date("March 23, 2023 10:25:25").getTime() - new Date().getTime() <= 0 ? (
         <div>
           <Modal show={show} onHide={() => setShow(false)} backdrop="static" keyboard={false} centered>
             <Modal.Header>

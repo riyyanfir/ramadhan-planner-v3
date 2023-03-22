@@ -7,7 +7,7 @@ const Countdown = () => {
   const [timerMinutes, setTimerMinutes] = useState();
   const [timerSeconds, setTimerSeconds] = useState();
   const setTimer = () => {
-    let countDownDate = new Date("March 23, 2023 15:37:25").getTime();
+    let countDownDate = new Date("March 23, 2023 10:25:25").getTime();
     let cDD = setInterval(function () {
       let now = new Date().getTime();
       let distance = countDownDate - now;
