@@ -17,8 +17,9 @@ const Countdown = () => {
       let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      if (distance === 0) {
+      if (distance < 0) {
         clearInterval(cDD);
+        window.location.reload(false);
       } else {
         setTimerDays(days);
         setTimerHours(hours);
@@ -38,7 +39,7 @@ const Countdown = () => {
       </div>
       <div className="d-flex align-items-center justify-content-center h-100 gap-5">
         <div className="d-flex flex-column">
-          <h1 className="bg-dark p-3 text-white rounded">{timerDays}</h1> <h3>Hari</h3>
+          <h1 className="bg-dark p-3 text-white rounded">{timerDays < 10 ? "0" + timerDays : timerDays}</h1> <h3>Hari</h3>
         </div>
         <div className="d-flex flex-column">
           <h1 className="bg-dark p-3 text-white rounded">{timerHours < 10 ? "0" + timerHours : timerHours}</h1> <h3>Jam</h3>
