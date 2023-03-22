@@ -1,4 +1,4 @@
-import { Badge, Container, Dropdown, Navbar } from "react-bootstrap";
+import { Container, Dropdown, Navbar } from "react-bootstrap";
 import { Form } from "react-router-dom";
 
 const NavbarComp = ({ userName }) => {
