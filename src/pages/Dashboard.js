@@ -122,7 +122,7 @@ const Dashboard = () => {
   return (
     <div>
       <Modal show={show} onHide={() => setShow(false)} backdrop="static" keyboard={false} centered>
-        <Modal.Header closeButton>
+        <Modal.Header>
           <Modal.Title>Mari buat Username mu!</Modal.Title>
         </Modal.Header>
         <Modal.Body>
