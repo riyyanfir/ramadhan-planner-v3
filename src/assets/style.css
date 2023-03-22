@@ -1,0 +1,31 @@
+* {
+  font-family: "Caveat", cursive;
+}
+
+.hero {
+  height: 100vh;
+  background-image: url("./hero.jpg");
+  background-size: cover;
+}
+
+.text-hero {
+  font-size: 58px;
+}
+
+.table-responsive-vertical {
+  max-height: 245px;
+}
+
+.big-title {
+  font-size: 32px;
+}
+
+@media (max-width: 575.98px) {
+  .checklist-amal {
+    font-size: 14px;
+  }
+
+  .checklist-row {
+    padding: 20px 15px;
+  }
+}
