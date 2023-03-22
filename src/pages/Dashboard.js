@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 import { Form, useLoaderData } from "react-router-dom";
 import { Button, Modal } from "react-bootstrap";
 import { useState } from "react";
+import Countdown from "../components/Countdown";
 
 export const dashboardLoader = () => {
   const userName = fetchData("userName");
@@ -121,34 +122,40 @@ const Dashboard = () => {
 
   return (
     <div>
-      <Modal show={show} onHide={() => setShow(false)} backdrop="static" keyboard={false} centered>
-        <Modal.Header>
-          <Modal.Title>Mari buat Username mu!</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form method="post">
-            <input type="hidden" name="_action" value="createNewUser" />
-            <div className="input-group">
-              <input type="text" className="form-control" name="newUser" placeholder="Masukan username" aria-label="Masukan username" aria-describedby="userName" required />
-              <Button variant="outline" className="bg-teal-600 text-white fw-bold" type="submit" onClick={() => setShow(false)}>
-                Tambah
-              </Button>
-            </div>
-          </Form>
-        </Modal.Body>
-      </Modal>
-      <div className="hero">
-        <div className="w-100 vh-100 position-absolute bg-teal-500 opacity-75"></div>
-        <NavbarComp userName={userName} />
-        <Hero />
-      </div>
-      <div className="pt-5">
-        <Challenge challenge={challenge} />
-        <DailyAmal dailyAmal={dailyAmal} />
-        <KhatamQuran khatamQuran={khatamQuran} />
-        <CollapseComp />
-      </div>
-      <Footer />
+      {new Date("March 23, 2023 15:37:25").getTime() - new Date().getTime() <= 0 ? (
+        <div>
+          <Modal show={show} onHide={() => setShow(false)} backdrop="static" keyboard={false} centered>
+            <Modal.Header>
+              <Modal.Title>Mari buat Username mu!</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <Form method="post">
+                <input type="hidden" name="_action" value="createNewUser" />
+                <div className="input-group">
+                  <input type="text" className="form-control" name="newUser" placeholder="Masukan username" aria-label="Masukan username" aria-describedby="userName" required />
+                  <Button variant="outline" className="bg-teal-600 text-white fw-bold" type="submit" onClick={() => setShow(false)}>
+                    Tambah
+                  </Button>
+                </div>
+              </Form>
+            </Modal.Body>
+          </Modal>
+          <div className="hero">
+            <div className="w-100 vh-100 position-absolute bg-teal-500 opacity-75"></div>
+            <NavbarComp userName={userName} />
+            <Hero />
+          </div>
+          <div className="pt-5">
+            <Challenge challenge={challenge} />
+            <DailyAmal dailyAmal={dailyAmal} />
+            <KhatamQuran khatamQuran={khatamQuran} />
+            <CollapseComp />
+          </div>
+          <Footer />
+        </div>
+      ) : (
+        <Countdown />
+      )}
     </div>
   );
 };
