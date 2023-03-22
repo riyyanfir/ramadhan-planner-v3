@@ -5,7 +5,7 @@ const NavbarComp = ({ userName }) => {
   return (
     <Navbar expand="md">
       <Container>
-        <Navbar.Brand className="text-white fw-bold">FastingQ</Navbar.Brand>
+        <Navbar.Brand className="text-white fw-bold">PuasaQ</Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text className="fs-5">
